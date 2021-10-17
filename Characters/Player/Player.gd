@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 		sword_animation_player.play("attack")
 		var sword_area: Area2D = sword.get_node("SwordHitArea")
 		for body in sword_area.get_overlapping_bodies():
-			if body.is_in_group("enemies"):
+			if body.is_in_group("damageable"):
 				print(body)
 				body.take_damage(3)
 
