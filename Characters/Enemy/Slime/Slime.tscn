@@ -94,6 +94,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 8 )
 animation = "move"
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 1 )
