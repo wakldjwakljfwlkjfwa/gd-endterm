@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health_bar_frame_ui.png-33d0f3d32a04236609cccbfc33805620.stex"
+path="res://.import/health_mark_ui.png-02cb10c16fe6b6fcbf3d455691adea45.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/roguelike/health_bar_frame_ui.png"
-dest_files=[ "res://.import/health_bar_frame_ui.png-33d0f3d32a04236609cccbfc33805620.stex" ]
+source_file="res://assets/roguelike/ui/hud/health_bar/health_mark_ui.png"
+dest_files=[ "res://.import/health_mark_ui.png-02cb10c16fe6b6fcbf3d455691adea45.stex" ]
 
 [params]
 

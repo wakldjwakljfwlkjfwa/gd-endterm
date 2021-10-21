@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/roguelike/health_bar_frame_ui.png" type="Texture" id=1]
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_bar_frame_ui.png" type="Texture" id=1]
 [ext_resource path="res://UI/HUD/HealthBar/HealthBar.gd" type="Script" id=2]
-[ext_resource path="res://assets/roguelike/health_bar_progress_ui.png" type="Texture" id=3]
-[ext_resource path="res://assets/roguelike/health_mark_ui.png" type="Texture" id=4]
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_bar_progress_ui.png" type="Texture" id=3]
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_mark_ui.png" type="Texture" id=4]
 
 [node name="HealthBar" type="MarginContainer"]
 script = ExtResource( 2 )
