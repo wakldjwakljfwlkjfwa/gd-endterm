@@ -209,15 +209,21 @@ rotation = -0.785398
 texture = ExtResource( 6 )
 offset = Vector2( 5, -4 )
 
-[node name="SlashSprite" type="Sprite" parent="Sword" index="1"]
+[node name="SwordHitArea" type="Area2D" parent="Sword" index="1"]
+position = Vector2( 10, 0 )
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/SwordHitArea" index="0"]
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="2"]
+anims/attack = SubResource( 15 )
+
+[node name="SlashSprite" type="Sprite" parent="Sword" index="3"]
 visible = false
 position = Vector2( 11, 0 )
 texture = ExtResource( 7 )
 hframes = 3
 frame = 1
-
-[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="2"]
-anims/attack = SubResource( 15 )
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/idle = SubResource( 16 )
