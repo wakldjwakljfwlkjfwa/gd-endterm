@@ -7,6 +7,7 @@ export(int) var acceleration: int = 40
 export(int) var max_speed: int = 100
 
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
+onready var animation_player:AnimationPlayer = get_node("AnimationPlayer")
 
 var mov_direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
@@ -31,5 +32,6 @@ func die() -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
+	animation_player.play("damaging")
 	if health <= 0:
 		die()
