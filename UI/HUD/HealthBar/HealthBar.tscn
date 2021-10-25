@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_bar_frame_ui.png" type="Texture" id=1]
+[ext_resource path="res://UI/HUD/HealthBar/HealthBar.gd" type="Script" id=2]
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_bar_progress_ui.png" type="Texture" id=3]
+[ext_resource path="res://assets/roguelike/ui/hud/health_bar/health_mark_ui.png" type="Texture" id=4]
+
+[node name="HealthBar" type="MarginContainer"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 95.0
+margin_bottom = 12.0
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 12.0
+
+[node name="ProgressMargin" type="MarginContainer" parent="HBoxContainer/MarginContainer"]
+margin_right = 80.0
+margin_bottom = 12.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="TextureProgress" parent="HBoxContainer/MarginContainer/ProgressMargin"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 78.0
+margin_bottom = 10.0
+step = 0.01
+texture_progress = ExtResource( 3 )
+
+[node name="ProgressFrame" type="TextureRect" parent="HBoxContainer/MarginContainer"]
+margin_right = 80.0
+margin_bottom = 12.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthIcon" type="TextureRect" parent="HBoxContainer"]
+margin_left = 83.0
+margin_right = 95.0
+margin_bottom = 12.0
+texture = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]

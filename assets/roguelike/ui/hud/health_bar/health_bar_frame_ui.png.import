@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health_ui.png-ef962274a77d3ef898663b7ca83cc759.stex"
+path="res://.import/health_bar_frame_ui.png-2e6d7b8c603ac5ae4ae75eabf58c2987.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/health_ui.png"
-dest_files=[ "res://.import/health_ui.png-ef962274a77d3ef898663b7ca83cc759.stex" ]
+source_file="res://assets/roguelike/ui/hud/health_bar/health_bar_frame_ui.png"
+dest_files=[ "res://.import/health_bar_frame_ui.png-2e6d7b8c603ac5ae4ae75eabf58c2987.stex" ]
 
 [params]
 
