@@ -115,3 +115,8 @@ shape = SubResource( 14 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/damaging = SubResource( 15 )
+
+[node name="PathUpdateTimer" type="Timer" parent="." index="4"]
+autostart = true
+
+[connection signal="timeout" from="PathUpdateTimer" to="." method="_on_PathUpdateTimer_timeout"]
