@@ -11,7 +11,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if path.size() > 1:
 		mov_direction = path[1] - position
-
+	if mov_direction.x > 0:
+		animated_sprite.flip_h = false
+	elif mov_direction.x < 0:
+		animated_sprite.flip_h = true
 
 func _on_PathUpdateTimer_timeout() -> void:
 	if target != null:
