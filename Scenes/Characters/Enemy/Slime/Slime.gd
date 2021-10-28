@@ -1,5 +1,5 @@
 extends "res://Scenes/Characters/Enemy/Enemy.gd"
-
+class_name Slime, "res://assets/v1.1 dungeon crawler 16x16 pixel pack/enemies/slime/slime_idle_anim_f0.png"
 var target: Node2D
 var navigation: Navigation2D
 var path: PoolVector2Array

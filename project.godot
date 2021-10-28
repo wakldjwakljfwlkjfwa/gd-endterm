@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "FiniteStateMachine",
 "language": "GDScript",
 "path": "res://Scripts/FSM.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Slime",
+"language": "GDScript",
+"path": "res://Scenes/Characters/Enemy/Slime/Slime.gd"
 } ]
 _global_script_class_icons={
 "Character": "res://assets/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png",
-"FiniteStateMachine": ""
+"FiniteStateMachine": "",
+"Slime": "res://assets/v1.1 dungeon crawler 16x16 pixel pack/enemies/slime/slime_idle_anim_f0.png"
 }
 
 [application]

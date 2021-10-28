@@ -3,7 +3,6 @@ extends FiniteStateMachine
 func _init() -> void:
 	_add_state("idle")
 	_add_state("move")
-	
 func _ready() -> void:
 	set_state(states.idle)
 	
