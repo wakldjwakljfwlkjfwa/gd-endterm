@@ -36,6 +36,6 @@ func die() -> void:
 func take_damage(damage: int, dir: Vector2, force: int) -> void:
 	health -= damage
 	animation_player.play("damaging")
-	velocity = move_and_slide(dir * force)
+	velocity += dir * force
 	if health <= 0:
 		die()
