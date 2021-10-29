@@ -5,7 +5,7 @@ const FRICTION: float = 0.15
 
 export(int) var acceleration: int = 40 
 export(int) var max_speed: int = 100
-export(int) var knockback_force: int = 30
+export(int) var knockback_force: int = 600
 
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
 onready var animation_player:AnimationPlayer = get_node("AnimationPlayer")
@@ -36,6 +36,6 @@ func die() -> void:
 func take_damage(damage: int, dir: Vector2, force: int) -> void:
 	health -= damage
 	animation_player.play("damaging")
-	velocity += dir * force
+	velocity = move_and_slide(dir * force)
 	if health <= 0:
 		die()

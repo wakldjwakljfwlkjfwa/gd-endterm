@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 		for body in sword_area.get_overlapping_bodies():
 			if body.is_in_group("damageable"):
 				print(body)
-				body.take_damage(3, mouse_direction, 30)
+				body.take_damage(3, mouse_direction, knockback_force)
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
