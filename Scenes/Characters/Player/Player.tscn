@@ -236,3 +236,6 @@ frame = 1
 [node name="AnimationPlayer" parent="." index="4"]
 anims/idle = SubResource( 17 )
 anims/move = SubResource( 18 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+current = true
