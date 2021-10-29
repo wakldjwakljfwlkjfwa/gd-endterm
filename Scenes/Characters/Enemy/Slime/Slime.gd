@@ -19,3 +19,8 @@ func _process(delta: float) -> void:
 func _on_PathUpdateTimer_timeout() -> void:
 	if target != null:
 		self.path = navigation.get_simple_path(position, target.position)
+
+
+func _on_VisionArea_body_entered(body: Node) -> void:
+	if body.is_in_group('player'):
+		target = body
