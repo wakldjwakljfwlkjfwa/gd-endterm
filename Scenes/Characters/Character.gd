@@ -33,7 +33,7 @@ func move() -> void:
 func die() -> void:
 	animation_player.play("died")
 	
-func take_damage(damage: int, dir: Vector2, force: int) -> void:
+func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
 	health -= damage
 	animation_player.play("damaging")
 	velocity += dir * force

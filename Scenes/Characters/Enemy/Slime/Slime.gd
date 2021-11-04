@@ -3,6 +3,7 @@ class_name Slime, "res://assets/v1.1 dungeon crawler 16x16 pixel pack/enemies/sl
 var target: Node2D
 var navigation: Navigation2D
 var path: PoolVector2Array
+onready var attack_distance: Area2D = $AttackDistance
 
 func _ready() -> void:
 	health = 10
@@ -20,7 +21,15 @@ func _on_PathUpdateTimer_timeout() -> void:
 	if target != null:
 		self.path = navigation.get_simple_path(position, target.position)
 
-
 func _on_VisionArea_body_entered(body: Node) -> void:
 	if body.is_in_group('player'):
 		target = body
+
+func _on_AttackCooldown_timeout():
+	attack()
+
+func attack() -> void:
+	var bodies = attack_distance.get_overlapping_bodies()
+	if target in bodies && target.has_method('take_damage'):
+		target.take_damage(3)
+		print(target.health)
