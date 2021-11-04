@@ -217,7 +217,6 @@ shape = SubResource( 22 )
 
 [node name="AttackCooldown" type="Timer" parent="." index="7"]
 wait_time = 2.0
-autostart = true
 
 [connection signal="timeout" from="PathUpdateTimer" to="." method="_on_PathUpdateTimer_timeout"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]

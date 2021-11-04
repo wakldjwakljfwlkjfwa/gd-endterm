@@ -16,6 +16,7 @@ var mov_direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 var health: int = 0
 var health_max: int = 0
+var is_targetable = true
 
 func _physics_process(_delta: float) -> void:
 	velocity = move_and_slide(velocity)
