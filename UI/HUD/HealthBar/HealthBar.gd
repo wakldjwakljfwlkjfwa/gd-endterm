@@ -10,3 +10,7 @@ func set_progress(health: int) -> void:
 		progress_bar, "value",
 		progress_bar.value, health, tween_speed)
 	tween.start()
+
+func set_progress_max(m: int) -> void:
+	progress_bar.max_value = m
+	set_progress(m)

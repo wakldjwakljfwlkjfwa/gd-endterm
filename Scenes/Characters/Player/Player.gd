@@ -1,12 +1,14 @@
 extends Character
 
 signal died
+signal hit
 
 onready var sword: Node2D = get_node("Sword")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 
 func _ready():
 	health = 10
+	health_max = 10
 
 func _process(_delta: float) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -28,6 +30,10 @@ func _process(_delta: float) -> void:
 			if body.is_in_group("damageable"):
 				print(body)
 				body.take_damage(3, mouse_direction, knockback_force)
+
+func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
+	.take_damage(damage, dir, force)
+	emit_signal("hit", health)
 
 func die() -> void:
 	.die()
