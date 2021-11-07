@@ -37,6 +37,26 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 80, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 4 )
@@ -67,26 +87,6 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 48, 0, 16, 16 )
-
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
@@ -94,14 +94,14 @@ animations = [ {
 "name": "idle",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "move",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "move",
 "speed": 5.0
 } ]
 
@@ -193,7 +193,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 17 )
 animation = "idle"
-playing = false
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 18 )
@@ -218,6 +218,11 @@ shape = SubResource( 22 )
 [node name="AttackCooldown" type="Timer" parent="." index="7"]
 wait_time = 2.0
 
+[node name="StunTimer" type="Timer" parent="." index="8"]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="PathUpdateTimer" to="." method="_on_PathUpdateTimer_timeout"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_StunTimer_timeout"]

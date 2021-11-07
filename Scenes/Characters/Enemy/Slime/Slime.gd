@@ -3,8 +3,10 @@ class_name Slime, "res://assets/v1.1 dungeon crawler 16x16 pixel pack/enemies/sl
 var target: Node2D
 var navigation: Navigation2D
 var path: PoolVector2Array
+var is_stunned: bool = false
 onready var attack_distance: Area2D = $AttackDistance
 onready var attack_cooldown: Timer = $AttackCooldown
+onready var stun_timer: Timer = $StunTimer
 
 func _ready() -> void:
 	health = 10
@@ -32,8 +34,20 @@ func _on_target_died():
 	attack_cooldown.stop()
 	target = null
 
-func _on_AttackCooldown_timeout():
-	attack()
+func _on_AttackCooldown_timeout() -> void:
+	if !is_stunned:
+		attack()
+
+func _on_StunTimer_timeout():
+	is_stunned = false
+	
+func stun() -> void:
+	stun_timer.start()
+	is_stunned = true
+
+func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
+	.take_damage(damage, dir, force)
+	stun()
 
 func attack() -> void:
 	var bodies = attack_distance.get_overlapping_bodies()
