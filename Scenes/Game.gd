@@ -1,9 +1,13 @@
 extends Node2D
 
 func _ready():
-	$BasicRoom/Slime.navigation = $Navigation2D
-	$HUD/HealthBar.set_progress_max($BasicRoom/Player.health_max)
-	$BasicRoom/Player.connect("hit", $HUD/HealthBar, "set_progress")
+	var generation = preload("res://Scripts/ProcGen/Generate.gd").new()
+	generation.init($Navigation2D, $RoomsContainer)
+	generation.generate()
+	
+	$Slime.navigation = $Navigation2D
+	$HUD/HealthBar.set_progress_max($Player.health_max)
+	$Player.connect("hit", $HUD/HealthBar, "set_progress")
 
 func _init() -> void:
 	var screen_size: Vector2 = OS.get_screen_size()

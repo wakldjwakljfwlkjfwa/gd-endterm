@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Rooms/BaseRoom.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Rooms/Util/Entrance.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Rooms/Util/EntranceContainer.gd" type="Script" id=3]
 
 [node name="BaseRoom" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Layer1" type="TileMap" parent="."]
 cell_size = Vector2( 16, 16 )
@@ -12,3 +17,20 @@ format = 1
 [node name="Layer2" type="TileMap" parent="."]
 cell_size = Vector2( 16, 16 )
 format = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="."]
+
+[node name="EntranceContainer" type="Node2D" parent="."]
+script = ExtResource( 3 )
+room_path = NodePath("..")
+tile_map_path = NodePath("../Layer1")
+
+[node name="Top" parent="EntranceContainer" instance=ExtResource( 2 )]
+
+[node name="Right" parent="EntranceContainer" instance=ExtResource( 2 )]
+angle = 1
+
+[node name="Bottom" parent="EntranceContainer" instance=ExtResource( 2 )]
+
+[node name="Left" parent="EntranceContainer" instance=ExtResource( 2 )]
+angle = 1
