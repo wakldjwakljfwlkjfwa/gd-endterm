@@ -13,7 +13,9 @@ func _ready() -> void:
 	max_speed = 30
 
 func _process(delta: float) -> void:
-	if path.size() > 1:
+	if is_stunned:
+		mov_direction = Vector2()
+	elif path.size() > 1:
 		mov_direction = path[1] - position
 	if mov_direction.x > 0:
 		animated_sprite.flip_h = false
