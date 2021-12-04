@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/roguelike/tilesets/dungeon_tile_set.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Rooms/Util/Corridor.gd" type="Script" id=2]
+
+[node name="Corridor" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
