@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _on_NewButton_pressed():
+	ConfigGame.game.level_create()
 	$Control.hide()
 
 

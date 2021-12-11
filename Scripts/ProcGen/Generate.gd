@@ -85,8 +85,8 @@ func generate() -> void:
 		var conns = astar.get_point_connections(point_ids[i])
 		
 		room.position = pos
-		room.init(self.nav)
 		container.add_child(room)
+		room.init(self.nav)
 		
 		for conn in conns:
 			var dir = astar.get_point_position(conn) - astar.get_point_position(point_ids[i])

@@ -11,6 +11,10 @@ func init(nav: Navigation2D) -> void:
 	self.remove_child(nav_polygon)
 	nav_polygon.global_position = self.global_position
 	nav.add_child(nav_polygon)
+	__init_after()
+
+func __init_after() -> void:
+	pass
 
 func get_used_rect() -> Rect2:
 	return $Layer1.get_used_rect()

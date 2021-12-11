@@ -21,7 +21,6 @@ tile_set = ExtResource( 2 )
 tile_data = PoolIntArray( 196612, 0, 0, 262155, 0, 0, 458759, 0, 0 )
 
 [node name="NavigationPolygonInstance" parent="." index="3"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="Top" parent="EntranceContainer" index="0"]
@@ -35,3 +34,14 @@ position = Vector2( 136, 264 )
 
 [node name="Left" parent="EntranceContainer" index="3"]
 position = Vector2( 8, 136 )
+
+[node name="EnemySpawnContainer" type="Node2D" parent="." index="5"]
+
+[node name="Position2D" type="Position2D" parent="EnemySpawnContainer" index="0"]
+position = Vector2( 73.0755, 97.644 )
+
+[node name="Position2D2" type="Position2D" parent="EnemySpawnContainer" index="1"]
+position = Vector2( 197.808, 102.684 )
+
+[node name="Position2D3" type="Position2D" parent="EnemySpawnContainer" index="2"]
+position = Vector2( 135.581, 183.41 )

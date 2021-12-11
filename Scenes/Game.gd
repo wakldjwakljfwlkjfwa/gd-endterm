@@ -12,8 +12,6 @@ func _ready():
 	ConfigGame.enemy_container = $EntityContainer/EnemyContainer
 	ConfigGame.navigation = $Navigation2D
 	
-	level_create()
-	
 	$EntityContainer/Slime.navigation = $Navigation2D
 	$HUD/HealthBar.set_progress_max(ConfigGame.player.health_max)
 
@@ -27,6 +25,10 @@ func level_finished() -> void:
 	level_create()
 
 func level_create() -> void:
+	for i in ConfigGame.enemy_container.get_children():
+		i.queue_free()
+	for i in ConfigGame.navigation.get_children():
+		i.queue_free()
 	for i in rooms_container.get_children():
 		i.queue_free()
 	var generation = preload("res://Scripts/ProcGen/Generate.gd").new()
