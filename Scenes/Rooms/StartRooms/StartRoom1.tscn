@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Rooms/BaseRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/roguelike/tilesets/dungeon_tile_set.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Rooms/StartRooms/StartRoom1.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Decorations/Torch/Torch.tscn" type="PackedScene" id=4]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 16, 16, 256, 16, 256, 256, 16, 256 )
@@ -19,8 +20,14 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="Layer2" parent="." index="1"]
 tile_set = ExtResource( 2 )
 
-[node name="NavigationPolygonInstance" parent="." index="2"]
+[node name="Torch" parent="DecorContainer" index="0" instance=ExtResource( 4 )]
+position = Vector2( 136, 16.6 )
+
+[node name="NavigationPolygonInstance" parent="." index="3"]
 navpoly = SubResource( 1 )
+
+[node name="PlayerSpawnPoint" type="Position2D" parent="." index="4"]
+position = Vector2( 136, 136 )
 
 [node name="Top" parent="EntranceContainer" index="0"]
 position = Vector2( 136, 8 )
@@ -33,6 +40,3 @@ position = Vector2( 136, 264 )
 
 [node name="Left" parent="EntranceContainer" index="3"]
 position = Vector2( 8, 136 )
-
-[node name="PlayerSpawnPoint" type="Position2D" parent="." index="4"]
-position = Vector2( 136, 136 )
