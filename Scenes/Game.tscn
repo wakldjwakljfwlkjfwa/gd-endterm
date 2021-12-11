@@ -19,6 +19,10 @@ position = Vector2( 36.0407, 36.0407 )
 [node name="Slime" parent="." instance=ExtResource( 2 )]
 position = Vector2( 159.514, 53.3288 )
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+light_mask = 2
+color = Color( 0.192157, 0.192157, 0.192157, 1 )
+
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="MenuLayer" parent="." instance=ExtResource( 1 )]
