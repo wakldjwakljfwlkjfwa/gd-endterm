@@ -13,19 +13,30 @@
 script = ExtResource( 8 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -480.0
+margin_bottom = -270.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = -0.672668
-margin_top = -0.309799
-margin_right = 479.327
-margin_bottom = 269.69
-size_flags_stretch_ratio = 0.0
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 480.0
+margin_bottom = 270.0
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/AspectRatioContainer"]
+margin_top = -105.0
+margin_right = 480.0
+margin_bottom = 375.0
 texture = ExtResource( 1 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
