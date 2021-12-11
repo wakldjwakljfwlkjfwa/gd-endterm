@@ -4,7 +4,8 @@ const BaseRoom = preload("res://Scenes/Rooms/BaseRoom.gd")
 const CorridorScene = preload("res://Scenes/Rooms/Util/Corridor.tscn")
 
 var rooms_collection = [
-	preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn")
+	preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn"),
+	preload("res://Scenes/Rooms/Room1/Room1.tscn")
 ]
 var nav: Navigation2D
 var container: Node2D
