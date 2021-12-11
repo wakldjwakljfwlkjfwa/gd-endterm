@@ -21,3 +21,6 @@ func _init() -> void:
 	var window_size: Vector2 = OS.get_window_size()
 	
 	OS.set_window_position(screen_size * 0.5 - window_size * 0.5)
+
+func level_finished() -> void:
+	print("Level Finished")

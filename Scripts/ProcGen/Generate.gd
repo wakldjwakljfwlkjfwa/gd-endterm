@@ -3,10 +3,19 @@ extends Node
 const BaseRoom = preload("res://Scenes/Rooms/BaseRoom.gd")
 const CorridorScene = preload("res://Scenes/Rooms/Util/Corridor.tscn")
 
+var rooms_start_collection = [
+	preload("res://Scenes/Rooms/StartRooms/StartRoom1.tscn")
+]
+
 var rooms_collection = [
 	preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn"),
 	preload("res://Scenes/Rooms/Room1/Room1.tscn")
 ]
+
+var rooms_end_collection = [
+	preload("res://Scenes/Rooms/EndRooms/EndRoom1.tscn")
+]
+
 var nav: Navigation2D
 var container: Node2D
 
@@ -56,8 +65,8 @@ func _get_rooms_map(size: int) -> AStar2D:
 func generate() -> void:
 #	randomize()
 	var rooms = []
-	var room_start = preload("res://Scenes/Rooms/StartRooms/StartRoom1.tscn").instance()
-	var room_exit: BaseRoom = preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn").instance()
+	var room_start = rooms_start_collection[randi() % rooms_start_collection.size()].instance()
+	var room_exit = rooms_end_collection[randi() % rooms_end_collection.size()].instance()
 	
 	# Add rooms into array
 	for i in range(5):
