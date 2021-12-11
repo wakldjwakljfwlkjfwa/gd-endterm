@@ -56,7 +56,7 @@ func _get_rooms_map(size: int) -> AStar2D:
 func generate() -> void:
 #	randomize()
 	var rooms = []
-	var room_start: BaseRoom = preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn").instance()
+	var room_start = preload("res://Scenes/Rooms/StartRooms/StartRoom1.tscn").instance()
 	var room_exit: BaseRoom = preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn").instance()
 	
 	# Add rooms into array
@@ -83,6 +83,8 @@ func generate() -> void:
 			var dir = astar.get_point_position(conn) - astar.get_point_position(point_ids[i])
 			var entrance = room.get_entrance(dir)
 			entrance.open()
-		
+	
+	ConfigGame.player.position = room_start.get_player_spawn_position()
+	ConfigGame.entity_container.add_child(ConfigGame.player)
 	
 	

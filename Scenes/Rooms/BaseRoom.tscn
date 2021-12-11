@@ -19,6 +19,8 @@ light_mask = 3
 cell_size = Vector2( 16, 16 )
 format = 1
 
+[node name="DecorContainer" type="Node2D" parent="."]
+
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="."]
 
 [node name="EntranceContainer" type="Node2D" parent="."]
