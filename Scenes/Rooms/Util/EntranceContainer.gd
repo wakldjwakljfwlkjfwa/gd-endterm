@@ -16,7 +16,6 @@ func _ready():
 		entrance.init(self.room, self.tile_map)
 
 func get_entrance(dir: Vector2):
-	print(dir)
 	if (dir == Vector2(0, -1)):
 		return $Top
 	if (dir == Vector2(1, 0)):

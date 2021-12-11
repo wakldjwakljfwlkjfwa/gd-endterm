@@ -9,6 +9,8 @@ func _ready():
 	player.connect("hit", $HUD/HealthBar, "set_progress")
 	ConfigGame.player = player
 	ConfigGame.entity_container = $EntityContainer
+	ConfigGame.enemy_container = $EntityContainer/EnemyContainer
+	ConfigGame.navigation = $Navigation2D
 	
 	level_create()
 	

@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 		var sword_area: Area2D = sword.get_node("SwordHitArea")
 		for body in sword_area.get_overlapping_bodies():
 			if body.is_in_group("damageable"):
-				print(body)
+				#print(body)
 				body.take_damage(3, mouse_direction, knockback_force)
 
 func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
