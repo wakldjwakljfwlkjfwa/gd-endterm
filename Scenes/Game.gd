@@ -35,3 +35,5 @@ func level_create() -> void:
 	var generation = preload("res://Scripts/ProcGen/Generate.gd").new()
 	generation.init($Navigation2D, $RoomsContainer)
 	generation.generate()
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
