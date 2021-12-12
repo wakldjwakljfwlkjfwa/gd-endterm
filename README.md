@@ -1,6 +1,6 @@
 # Фандалин / Fandalin
 
-![](https://i.ibb.co/dg34rZW/123.png)
+![](https://i.ibb.co/gTr4wYP/123.png)
 ### GD Endterm Project
 Done by:
 * Shoibekov Nursultan
