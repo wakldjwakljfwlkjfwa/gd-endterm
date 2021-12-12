@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Character, "res://assets/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png"
 
 signal health_changed
+signal died
 
 const FRICTION: float = 0.15
 
@@ -33,9 +34,6 @@ func move() -> void:
 	velocity += mov_direction * acceleration
 	velocity = velocity.clamped(max_speed)
 
-func die() -> void:
-	pass
-	
 func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
 	health -= damage
 	emit_signal("health_changed", health)
@@ -43,6 +41,10 @@ func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> v
 	velocity += dir * force
 	if health <= 0:
 		animation_player.play("died")
+		die()
+
+func die() -> void:
+	emit_signal("died")
 
 func add_health(amount: int) -> void:
 	health += amount

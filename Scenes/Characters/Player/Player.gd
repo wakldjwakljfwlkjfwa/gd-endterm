@@ -1,6 +1,5 @@
 extends Character
 
-signal died
 signal hit
 
 onready var sword: Node2D = get_node("Sword")
@@ -36,7 +35,6 @@ func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> v
 
 func die() -> void:
 	.die()
-	emit_signal("died")
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
