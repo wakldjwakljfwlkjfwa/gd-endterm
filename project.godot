@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 
 ConfigTilemap="*res://Configs/ConfigTilemap.gd"
 ConfigGame="*res://Configs/ConfigGame.gd"
+PlayerData="*res://Configs/PlayerData.gd"
 
 [display]
 

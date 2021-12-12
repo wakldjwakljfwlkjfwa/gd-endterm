@@ -54,3 +54,6 @@ func attack() -> void:
 	var bodies = attack_distance.get_overlapping_bodies()
 	if target in bodies && target.has_method('take_damage'):
 		target.take_damage(3)
+
+func die() -> void:
+	.die()

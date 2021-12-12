@@ -32,11 +32,11 @@ func move() -> void:
 	velocity = velocity.clamped(max_speed)
 
 func die() -> void:
-	animation_player.play("died")
+	pass
 	
 func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> void:
 	health -= damage
 	animation_player.play("damaging")
 	velocity += dir * force
 	if health <= 0:
-		die()
+		animation_player.play("died")
