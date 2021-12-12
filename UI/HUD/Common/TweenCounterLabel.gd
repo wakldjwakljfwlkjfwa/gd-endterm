@@ -8,6 +8,5 @@ func _process(delta: float) -> void:
 	text = str(val)
 
 func update_text(val: int) -> void:
-	print(val)
 	tween.interpolate_property(self, "val", self.val, val, tween_speed)
 	tween.start()

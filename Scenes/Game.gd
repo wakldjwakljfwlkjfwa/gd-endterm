@@ -10,6 +10,7 @@ func _ready():
 	ConfigGame.player = player
 	ConfigGame.entity_container = $EntityContainer
 	ConfigGame.enemy_container = $EntityContainer/EnemyContainer
+	ConfigGame.drop_container = $EntityContainer/DropContainer
 	ConfigGame.navigation = $Navigation2D
 	ConfigGame.hud = $HUD
 	PlayerData.connect("score_updated", ConfigGame.hud, "update_score")
