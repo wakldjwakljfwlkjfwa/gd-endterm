@@ -7,7 +7,7 @@ func _ready():
 	ConfigGame.game = self
 	
 	var player = preload("res://Scenes/Characters/Player/Player.tscn").instance()
-	player.connect("hit", $HUD/HealthBar, "set_progress")
+	player.connect("health_changed", $HUD/HealthBar, "set_progress")
 	ConfigGame.player = player
 	ConfigGame.entity_container = $EntityContainer
 	ConfigGame.enemy_container = $EntityContainer/EnemyContainer
