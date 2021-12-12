@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The-Northern-Path.mp3-481452e7904f4b0a22cd782acb51fa55.mp3str"
+
+[deps]
+
+source_file="res://assets/The-Northern-Path.mp3"
+dest_files=[ "res://.import/The-Northern-Path.mp3-481452e7904f4b0a22cd782acb51fa55.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

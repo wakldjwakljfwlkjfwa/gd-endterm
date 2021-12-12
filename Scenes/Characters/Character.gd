@@ -39,4 +39,5 @@ func take_damage(damage: int, dir: Vector2 = Vector2(), force: float = 0.0) -> v
 	animation_player.play("damaging")
 	velocity += dir * force
 	if health <= 0:
+		get_tree().change_scene("res://DeathScreenLayer.tscn")
 		animation_player.play("died")
