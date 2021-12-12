@@ -8,3 +8,6 @@ func update_health(health: int) -> void:
 
 func update_score(val: int) -> void:
 	$ScoreLabel.update_text(val)
+
+func update_coins(val: int) -> void:
+	$CounterIcon.update_label(val)

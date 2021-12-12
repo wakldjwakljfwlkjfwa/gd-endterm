@@ -15,6 +15,7 @@ func _ready():
 	ConfigGame.navigation = $Navigation2D
 	ConfigGame.hud = $HUD
 	PlayerData.connect("score_updated", ConfigGame.hud, "update_score")
+	PlayerData.connect("coins_updated", ConfigGame.hud, "update_coins")
 	
 	$HUD/HealthBar.set_progress_max(player.health_max)
 
