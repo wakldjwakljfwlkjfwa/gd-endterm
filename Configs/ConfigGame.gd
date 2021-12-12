@@ -7,3 +7,5 @@ var enemy_container
 var drop_container
 var navigation
 var hud
+
+var level = 0

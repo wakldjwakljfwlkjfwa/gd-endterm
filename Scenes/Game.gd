@@ -29,6 +29,8 @@ func level_finished() -> void:
 	level_create()
 
 func level_create() -> void:
+	ConfigGame.level += 1
+	
 	for i in ConfigGame.enemy_container.get_children():
 		i.queue_free()
 	for i in ConfigGame.drop_container.get_children():
@@ -39,6 +41,6 @@ func level_create() -> void:
 		i.queue_free()
 	var generation = preload("res://Scripts/ProcGen/Generate.gd").new()
 	generation.init($Navigation2D, $RoomsContainer)
-	generation.generate()
+	generation.generate(ConfigGame.level)
 #	if $AudioStreamPlayer.playing == false:
 #		$AudioStreamPlayer.play()

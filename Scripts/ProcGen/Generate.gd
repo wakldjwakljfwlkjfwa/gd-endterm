@@ -62,14 +62,14 @@ func _get_rooms_map(size: int) -> AStar2D:
 #			print(astar.get_point_position(i), astar.get_point_position(j))
 	return astar
 
-func generate() -> void:
-#	randomize()
+func generate(level: int) -> void:
+	var rooms_amount = log(level * 10) * 2 + 3
 	var rooms = []
 	var room_start = rooms_start_collection[randi() % rooms_start_collection.size()].instance()
 	var room_exit = rooms_end_collection[randi() % rooms_end_collection.size()].instance()
 	
 	# Add rooms into array
-	for i in range(5):
+	for i in range(rooms_amount):
 		var room: BaseRoom = rooms_collection[randi() % rooms_collection.size()].instance()
 		rooms.append(room)
 	rooms.insert(0, room_start)
