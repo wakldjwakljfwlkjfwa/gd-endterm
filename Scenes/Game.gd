@@ -11,6 +11,8 @@ func _ready():
 	ConfigGame.entity_container = $EntityContainer
 	ConfigGame.enemy_container = $EntityContainer/EnemyContainer
 	ConfigGame.navigation = $Navigation2D
+	ConfigGame.hud = $HUD
+	PlayerData.connect("score_updated", ConfigGame.hud, "update_score")
 	
 	$HUD/HealthBar.set_progress_max(player.health_max)
 

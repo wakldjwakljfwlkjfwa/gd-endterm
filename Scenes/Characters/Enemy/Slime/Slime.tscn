@@ -186,6 +186,7 @@ radius = 17.627
 
 [node name="Slime" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+score = 10
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource( 5 )
@@ -193,6 +194,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 17 )
 animation = "idle"
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 18 )
