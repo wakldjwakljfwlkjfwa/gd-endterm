@@ -1,11 +1,6 @@
 extends RigidBody2D
 
 signal pickedup
-
-export(int) var amount: int = 0
-
-func _init():
-	connect("pickedup", PlayerData, "add_coins")
 	
 func _ready():
 	linear_damp = 7
@@ -23,6 +18,7 @@ func _on_PullArea_body_exited(body):
 
 
 func _on_PickArea_body_entered(body):
-	if (body.is_in_group("player")):
-		emit_signal("pickedup", amount)
-		queue_free()
+	pickedup(body)
+
+func pickedup(body) -> void:
+	pass
