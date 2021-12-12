@@ -13,4 +13,4 @@ func add_score(val: int) -> void:
 
 func add_coins(val: int) -> void:
 	coins += val
-	emit_signal("coins_updated")
+	emit_signal("coins_updated", coins)

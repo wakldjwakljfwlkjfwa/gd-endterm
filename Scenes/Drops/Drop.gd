@@ -8,7 +8,8 @@ func _init():
 	connect("pickedup", PlayerData, "add_coins")
 	
 func _ready():
-	pass
+	linear_damp = 7
+	apply_central_impulse(Vector2(randi(), randi()).normalized() * 100)
 
 func init():
 	pass

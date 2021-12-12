@@ -7,6 +7,11 @@ onready var attack_distance: Area2D = $AttackDistance
 onready var attack_cooldown: Timer = $AttackCooldown
 onready var stun_timer: Timer = $StunTimer
 
+func _init():
+	drops_collection = [
+		{"min": 0, "max": 4, "drop": preload("res://Scenes/Drops/Gold/Gold.tscn")}
+	]
+
 func _ready() -> void:
 	health = 10
 	max_speed = 30

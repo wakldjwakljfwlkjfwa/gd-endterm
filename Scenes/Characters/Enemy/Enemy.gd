@@ -13,10 +13,9 @@ func die() -> void:
 		var minimum = drop["min"]
 		var diff = drop["max"] - drop["min"]
 		var amount = minimum + (randi() % diff)
-		print(amount)
 		for i in range(amount):
 			var d = drop["drop"].instance()
-			d.init()
+			d.position = position
 			ConfigGame.drop_container.add_child(d)
 	.die()
 	queue_free()

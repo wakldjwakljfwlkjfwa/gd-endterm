@@ -3,6 +3,7 @@ extends Node2D
 onready var rooms_container = $RoomsContainer
 
 func _ready():
+	randomize()
 	ConfigGame.game = self
 	
 	var player = preload("res://Scenes/Characters/Player/Player.tscn").instance()
@@ -29,6 +30,8 @@ func level_finished() -> void:
 func level_create() -> void:
 	for i in ConfigGame.enemy_container.get_children():
 		i.queue_free()
+	for i in ConfigGame.drop_container.get_children():
+		i.queue_free()
 	for i in ConfigGame.navigation.get_children():
 		i.queue_free()
 	for i in rooms_container.get_children():
@@ -36,5 +39,5 @@ func level_create() -> void:
 	var generation = preload("res://Scripts/ProcGen/Generate.gd").new()
 	generation.init($Navigation2D, $RoomsContainer)
 	generation.generate()
-	if $AudioStreamPlayer.playing == false:
-		$AudioStreamPlayer.play()
+#	if $AudioStreamPlayer.playing == false:
+#		$AudioStreamPlayer.play()
