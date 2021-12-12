@@ -21,7 +21,16 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 tile_set = ExtResource( 2 )
 
 [node name="Torch" parent="DecorContainer" index="0" instance=ExtResource( 4 )]
-position = Vector2( 136, 16.6 )
+position = Vector2( 24, 24 )
+
+[node name="Torch4" parent="DecorContainer" index="1" instance=ExtResource( 4 )]
+position = Vector2( 24, 248 )
+
+[node name="Torch2" parent="DecorContainer" index="2" instance=ExtResource( 4 )]
+position = Vector2( 248, 24 )
+
+[node name="Torch3" parent="DecorContainer" index="3" instance=ExtResource( 4 )]
+position = Vector2( 248, 248 )
 
 [node name="NavigationPolygonInstance" parent="." index="3"]
 navpoly = SubResource( 1 )
