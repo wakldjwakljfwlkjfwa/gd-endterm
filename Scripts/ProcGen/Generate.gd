@@ -9,7 +9,8 @@ var rooms_start_collection = [
 
 var rooms_collection = [
 	preload("res://Scenes/Rooms/BasicRoom/BasicRoom.tscn"),
-	preload("res://Scenes/Rooms/Room1/Room1.tscn")
+	preload("res://Scenes/Rooms/Room1/Room1.tscn"),
+	preload("res://Scenes/Rooms/Room2/Room2.tscn")
 ]
 
 var rooms_end_collection = [
